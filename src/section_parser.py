@@ -1,5 +1,8 @@
 def extract_shadowing_section(text):
-    start = text.index("Shadowing")
-    end = text.index("Japanese part")
+    start = text.find("Shadowing")
+    end = text.find("Japanese part", start)
 
     return text[start:end]
+
+def extract_japanese_section(text):
+    return text[text.find("Japanese part", text.find("Shadowing")):]
